@@ -1,0 +1,195 @@
+/* Базовые стили приложения */
+.todo-list {
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: 'Inter', sans-serif;
+  color: #1C1C1E;
+}
+
+/* Категория задачи */
+.category {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  border: 1px solid #C7C7CC;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1C1C1E;
+  background-color: #E9E9E9;
+}
+
+/* Список задач */
+.todo-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.todo-item {
+  padding: 20px;
+  border: 1px solid #E5E5EA;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(60, 64, 67, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(60, 64, 67, 0.15);
+}
+
+.todo-item.completed {
+  opacity: 0.6;
+}
+
+.todo-item h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: #1C1C1E;
+  margin-bottom: 10px;
+}
+
+.todo-item .description {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #3A3A3C;
+}
+
+.todo-item .description p {
+  margin: 0;
+}
+
+/* Кнопки в задаче */
+.todo-item-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.todo-item-buttons .toggle-button:hover{
+  border-color: #28A745;
+}
+.todo-item-buttons .delete-button:hover{
+  border-color: #FF3B30;
+}
+.todo-item-buttons .edit-button:hover{
+  border-color: #FFC107;
+}
+
+.todo-item button {
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  color: #1C1C1E;
+  border: 1px solid #C7C7CC;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.todo-item button:hover {
+  border-color: #007AFF;
+  box-shadow: 0 2px 8px rgba(0, 122, 255, 0.2);
+}
+
+/* Иконки в кнопках (если используются) */
+.todo-item button i {
+  margin-right: 6px;
+}
+
+/* Блок редактирования категории */
+.edit-category {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-category select,
+.edit-category input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #C7C7CC;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  transition: border-color 0.2s ease;
+}
+
+.edit-category select:focus,
+.edit-category input:focus {
+  border-color: #007AFF;
+}
+
+.edit-category-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-category button {
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  color: #1C1C1E;
+  border: 1px solid #C7C7CC;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.edit-category button:hover {
+  border-color: #007AFF;
+  box-shadow: 0 2px 8px rgba(0, 122, 255, 0.2);
+}
+
+/* Контейнер для кнопок */
+.buttons-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+/* Кнопки удаления */
+.delete-completed-button,
+.delete-category-tasks-button {
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  color: #1C1C1E;
+  border: 1px solid #C7C7CC;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.delete-completed-button:hover,
+.delete-category-tasks-button:hover {
+  border-color: #FF3B30;
+  box-shadow: 0 2px 8px rgba(255, 59, 48, 0.2);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+  .todo-list {
+    margin: 20px;
+  }
+  .todo-item {
+    padding: 15px;
+  }
+  
+  .add-todo-form button,
+  .delete-completed-button,
+  .delete-category-tasks-button {
+    width: 100%;
+  }
+  .buttons-container,
+  .todo-item-buttons {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+}
